@@ -1,9 +1,8 @@
 <div align="center">
 <img src="https://github.com/user-attachments/assets/583ffd18-1187-4cf2-9407-2a600750c0eb" alt="Logo" width="130"/>
-<h1>Consoley for VS Code</h1>
 </div>
 
-<!--# Consoley for VS Code -->
+# Consoley for VS Code
 
 
 Consoley is a VS Code extension that injects the output of `console.log()` or `print()` statements directly into your code as inline comments. It allows you to see the result of your code's outputs directly in the editor, without needing to open the console or terminal.
