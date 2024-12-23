@@ -1,71 +1,88 @@
-# consoley README
+<div align="center">
+<img src="https://github.com/user-attachments/assets/583ffd18-1187-4cf2-9407-2a600750c0eb" alt="Logo" width="130"/>
+<h1>Consoley for VS Code</h1>
+</div>
 
-This is the README for your extension "consoley". After writing up a brief description, we recommend including the following sections.
+<!--# Consoley for VS Code -->
 
-## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Consoley is a VS Code extension that injects the output of `console.log()` or `print()` statements directly into your code as inline comments. It allows you to see the result of your code's outputs directly in the editor, without needing to open the console or terminal.
 
-For example if there is an image subfolder under your extension project workspace:
+## ✨ Features
 
-\!\[feature X\]\(images/feature-x.png\)
+- Displays the output of `console.log()` and `print()` statements inline in your code.
+- Automatically updates the output when the file is saved.
+- Prevents duplicate outputs from being injected into the same line.
+- Supports JavaScript, TypeScript, Python (and can be extended to other languages).
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 📦 Installation
 
-## Requirements
+1. Open VS Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for `Consoley`.
+4. Click `Install` to add the extension to your VS Code.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Alternatively, you can install it directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/).
 
-## Extension Settings
+## ⚙️ Usage
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. **Write a `console.log()` or `print()` statement in your code**:
+    ```javascript
+    console.log("Hello, World!")
+    print("Hello from Python!")
+    ```
 
-For example:
+2. **Save the file**. The extension will automatically inject the output as a comment next to your `console.log()` or `print()` statement.
 
-This extension contributes the following settings:
+    Example:
+    ```javascript
+    console.log("Hello, World!") // "Hello, World!"
+    print("Hello from Python!") // "Hello from Python!"
+    ```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+3. **Update your code**: If you modify the code, the comment with the output will be updated with the new result.
 
-## Known Issues
+    Example:
+    ```javascript
+    const greeting = "Hello, World!";
+    console.log(greeting) // "Hello, World!"
+    ```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+4. **Prevent Duplication**: Once an output has been injected for a line, it will not create new output comments if the code is saved again.
 
-## Release Notes
+## 📝 Commands
 
-Users appreciate release notes as you update your extension.
+- **Show Consoley**: Activates the extension and displays a message confirming that the extension is active.
 
-### 1.0.0
+To activate the command, press `Ctrl+Shift+P` or `Cmd+Shift+P` (on macOS) and type `Consoley: Show Console`.
 
-Initial release of ...
+## 🌐 Supported Languages
 
-### 1.0.1
+- JavaScript (`console.log`)
+- Python (`print`)
+- More languages can be supported by extending the regular expression in the code.
 
-Fixed issue #.
+## ⚙️ Configuration
 
-### 1.1.0
+There are no specific configuration settings for this extension at the moment. You can simply install it and start using it in your code.
 
-Added features X, Y, and Z.
+## 🐞 Known Issues
 
----
+- The extension works by replacing the text in the file, so be cautious when using it with large files or complex code.
+- It only supports basic output for `console.log` and `print` statements. More advanced use cases (such as evaluating complex expressions) may not work perfectly.
 
-## Following extension guidelines
+## 🤝 Contributing
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -am 'Add feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Create a new Pull Request.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+## 📜 License
 
-## Working with Markdown
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/psparwez/consoley/tree/main?tab=MIT-1-ov-file) file for details.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## 💡 Acknowledgements
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Special thanks to the [VS Code API](https://code.visualstudio.com/api) for providing the tools needed to create this extension.
